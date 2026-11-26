@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rücklage AT – Finanzen für Selbständige</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f5f6f3;--card:#fff;--tx:#18201c;--mu:#66716a;--ac:#17694d;--ac2:#e9f3ee;--bd:#e0e5e0;--warn:#a15c00;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1311;--card:#181e1b;--tx:#e8ede9;--mu:#98a39b;--ac:#4cc79b;--ac2:#1a2a23;--bd:#2a332e;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1311;--card:#181e1b;--tx:#e8ede9;--mu:#98a39b;--ac:#4cc79b;--ac2:#1a2a23;--bd:#2a332e;--warn:#f0b35a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px 16px 90px}
+.brand{font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.brand svg{width:38px;height:38px;flex:none}.brand{font-size:21px;letter-spacing:-.4px}.brand em{font-style:normal;font-size:11px;font-weight:800;letter-spacing:.8px;color:#d62839;border:1.5px solid #d62839;border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:3px}
+h1{font-size:30px;line-height:1.15;margin:14px 0 10px;letter-spacing:-.5px}
+h2{font-size:20px;margin:22px 0 10px}
+h3{font-size:15px;margin:0 0 4px}
+p{margin:0 0 10px}
+.mu{color:var(--mu);font-size:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
+.hero{background:var(--ac2);border:1px solid var(--bd);border-radius:18px;padding:22px 18px;margin-top:6px}
+.btn{display:inline-block;background:var(--ac);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:12px;border:0;font-size:16px;cursor:pointer}
+.btn.o{background:none;color:var(--ac);border:1px solid var(--ac);margin-left:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.grid{grid-template-columns:1fr}.btn.o{margin:8px 0 0}}
+.grid .card{margin:0}
+.num{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--ac);color:#fff;font-weight:700;font-size:13px;margin-right:8px}
+label{display:block;font-size:13px;color:var(--mu);margin:0 0 4px}
+input,select,textarea{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px;width:100%;margin-bottom:10px}
+textarea{min-height:64px;resize:vertical}
+.chk{display:flex;gap:8px;align-items:center;color:var(--tx);font-size:14px}
+.chk input{width:auto;margin:0}
+.big{font-size:40px;font-weight:800;color:var(--ac);line-height:1.1}
+.r{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--bd);font-size:15px;gap:10px}
+.r span:first-child{color:var(--mu)}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;margin:12px 0;background:var(--bd)}
+.bar i{display:block}
+.warn{font-size:12.5px;color:var(--warn)}
+details{border-top:1px solid var(--bd);padding:10px 0}summary{cursor:pointer;font-weight:600}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--bd);display:flex;justify-content:space-around;padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:5}
+nav a{flex:1;text-align:center;text-decoration:none;color:var(--mu);font-size:10.5px;padding:4px 1px;border-radius:8px}
+nav a b{display:block;font-size:19px;line-height:1.2}
+nav a.on{color:var(--ac);font-weight:700}
+.view{display:none}.view.on{display:block}
+.seg{display:flex;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:3px;margin-bottom:14px}.seg button{flex:1;border:0;background:none;color:var(--mu);font:inherit;font-weight:600;padding:9px;border-radius:9px;cursor:pointer}.seg button.on{background:var(--ac);color:var(--bg)}.seg small{font-size:11px}
+.price{font-size:34px;font-weight:800;line-height:1.1}.price small{font-size:14px;font-weight:500;color:var(--mu)}.pro{border:2px solid var(--ac);position:relative;margin-top:18px}.tag{position:absolute;top:-11px;right:14px;background:var(--ac);color:var(--bg);font-size:11px;font-weight:700;padding:2px 9px;border-radius:10px}
+ul.ft{list-style:none;padding:0;margin:12px 0}ul.ft li{padding:5px 0;font-size:15px}ul.ft li:before{content:"✓ ";color:var(--ac);font-weight:700}ul.ft li.soon{color:var(--mu)}
+.ybars{display:flex;gap:4px;align-items:flex-end;height:72px;margin:12px 0}.ybars div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-size:10px;color:var(--mu)}.ybars i{display:block;width:100%;background:var(--ac);border-radius:3px 3px 0 0;min-height:2px}.mb{background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:4px 8px;font:inherit;font-size:13px;margin-left:6px;cursor:pointer}.pbtn{width:100%;background:var(--ac);color:var(--bg);border:0;border-radius:12px;padding:13px;font:inherit;font-weight:700;cursor:pointer}
+.inv{background:#fff;color:#111;border:1px solid var(--bd);border-radius:10px;padding:18px;font-size:14px}
+.inv table{width:100%;border-collapse:collapse;margin:14px 0}
+.inv td,.inv th{padding:6px 4px;border-bottom:1px solid #ddd;text-align:left}
+.inv .t{text-align:right}
+.dl{display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid var(--bd)}
+.dl.next b{color:var(--ac)}
+@media print{body *{visibility:hidden}.inv,.inv *{visibility:visible}.inv{position:absolute;left:0;top:0;width:100%;border:0}}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.g3{display:grid;grid-template-columns:2.4fr 1fr 1.2fr auto;gap:6px;align-items:start}
+@media (max-width:520px){.g3{grid-template-columns:1fr 1fr}.g3>:first-child{grid-column:1/-1}}
+.x{background:none;border:0;color:var(--mu);font-size:18px;padding:8px 2px;cursor:pointer}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.acts .btn.o{margin:0}
+a.btn{text-decoration:none}
+.sheet{background:#fff;color:#161a18;border:1px solid var(--bd);border-radius:6px;padding:26px 22px;font-size:13.5px;line-height:1.5;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.sheet table{width:100%;border-collapse:collapse;margin:16px 0 8px}
+.sheet th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:#66716a;border-bottom:2px solid #161a18;padding:6px 4px}
+.sheet td{padding:8px 4px;border-bottom:1px solid #e6e9e6;vertical-align:top}
+.sheet .rt{text-align:right;white-space:nowrap}
+.sheet .tot{margin-left:auto;width:260px;max-width:100%}.sheet .tot div{display:flex;justify-content:space-between;padding:3px 0}
+.sheet .tot .gt{border-top:2px solid #161a18;margin-top:4px;padding-top:7px;font-weight:800;font-size:16px}
+.sheet .pay{background:#f6f7f4;border-left:4px solid #17694d;padding:12px 14px;margin-top:20px;border-radius:4px}
+.sheet .hd{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;flex-wrap:wrap}
+.sheet .sm{font-size:12px;color:#66716a}
+.sheet .ft{margin-top:22px;padding-top:10px;border-top:1px solid #e6e9e6;font-size:11.5px;color:#66716a}
+@media print{.sheet,.sheet *{visibility:visible}.sheet{position:absolute;left:0;top:0;width:100%;border:0;box-shadow:none;padding:0}}
+:root{--red:#c0392b;--ok:#17694d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--red:#ff7b6b;--ok:#4cc79b}}
+:root[data-theme="dark"]{--red:#ff7b6b;--ok:#4cc79b}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.kp .card{margin:0}.kp .v{font-size:22px;font-weight:800;line-height:1.15}.kp .l{font-size:12px;color:var(--mu)}
+.pos{color:var(--ok)}.neg{color:var(--red)}
+.chip{font-size:12px;font-weight:700;padding:3px 9px;border-radius:10px;border:1px solid currentColor;white-space:nowrap;align-self:flex-start}.chip.ok{color:var(--ok)}.chip.soon{color:var(--warn)}.chip.late{color:var(--red)}
+.mb{background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer}
+.tp{display:none}.tp.on{display:block}
+nav{overflow-x:auto}nav a{min-width:56px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section class="view" id="v-start">
+  <div class="brand"><svg viewBox="0 0 48 48" role="img" aria-label="Rücklage AT Logo"><defs><clipPath id="lc"><circle cx="24" cy="24" r="22"/></clipPath></defs><g clip-path="url(#lc)"><rect width="48" height="48" fill="#d62839"/><rect y="16" width="48" height="16" fill="#fff"/></g><circle cx="24" cy="24" r="19" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="2 2.2"/><path d="M19.6 29.6V18.4h4.2a3.2 3.2 0 0 1 0 6.4h-4.2M23.8 24.8l3.8 4.8" fill="none" stroke="#d62839" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Rück<b style="color:#d62839">lage</b><em>AT</em></span></div>
+  <div class="hero">
+    <h1>Wisse, was dir wirklich bleibt.</h1>
+    <p>Der Finanzhelfer für Selbständige, Freelancer und Einzelunternehmer in Österreich: Rücklagen für SVS und Steuern berechnen, Rechnungen schreiben und keine Frist mehr verpassen.</p>
+    <a class="btn" href="#rechner">Rücklage berechnen</a><a class="btn o" href="#rechnung">Rechnung erstellen</a>
+  </div>
+  <h2>Was du hier bekommst</h2>
+  <div class="grid">
+    <div class="card"><h3>🧮 Rücklagenrechner</h3><p class="mu">SVS, Einkommensteuer und Umsatzsteuer auf einen Blick, mit Werten für 2026.</p></div>
+    <div class="card"><h3>🧾 Rechnungen</h3><p class="mu">Saubere Rechnungen mit USt-Ausweis oder Kleinunternehmer-Hinweis, bereit zum Drucken.</p></div>
+    <div class="card"><h3>📅 Fristen</h3><p class="mu">Die nächsten Termine für SVS, UVA und Vorauszahlungen mit Countdown.</p></div>
+    <div class="card"><h3>💡 Wissen</h3><p class="mu">Kurze Antworten zu Gewerbe, Kleinunternehmer und Grundfreibetrag.</p></div>
+  </div>
+  <h2>So funktioniert es</h2>
+  <div class="card"><p><span class="num">1</span>Umsatz und Ausgaben eintragen.</p><p><span class="num">2</span>Rücklagenquote ablesen und bei jeder Rechnung beiseitelegen.</p><p style="margin:0"><span class="num">3</span>Termine im Blick behalten und entspannt zahlen.</p></div>
+  <h2>Auf einem anderen Gerät weiterarbeiten</h2>
+  <div class="card"><p class="mu">So nimmst du deine Eingaben, Rechnungen, Kunden und deinen Pro-Schlüssel mit: Sichere die Daten als Datei, öffne die App auf dem anderen Gerät und lade die Datei dort.</p>
+    <p><button class="btn" id="bx" type="button">Daten sichern</button> <label class="btn o" for="bf" style="margin:0">Daten laden</label><input id="bf" type="file" accept=".json,application/json" style="display:none"></p>
+    <textarea id="bt" placeholder="Alternativ: Sicherungstext hier einfügen" style="min-height:70px"></textarea>
+    <button class="btn o" id="bi" type="button" style="margin:0">Text laden</button><div class="mu" id="bm" style="margin-top:8px"></div></div>
+  <p class="warn">Alle Angaben sind Schätzungen und keine Steuerberatung.</p>
+</section>
+
+<section class="view" id="v-rechner">
+  <h1>Rücklagenrechner</h1>
+  <p class="mu">Schätzung für Selbständige (GSVG) mit Werten für 2026.</p>
+  <div class="card">
+    <label for="um">Jahresumsatz netto in €</label><input id="um" type="number" inputmode="decimal" placeholder="z. B. 60000">
+    <label for="au">Betriebsausgaben netto pro Jahr in €</label><input id="au" type="number" inputmode="decimal" placeholder="z. B. 8000">
+    <label class="chk"><input id="kl" type="checkbox">Kleinunternehmer (keine USt, bis 55.000 € netto)</label>
+  </div>
+  <div class="card">
+    <h3>Das solltest du zurücklegen</h3>
+    <div class="big" id="quote">–</div><div class="mu" id="qsub">deines Netto-Umsatzes</div>
+    <div class="bar" id="bar"></div>
+    <div class="r"><span>Gewinn vor Steuern</span><b id="gw">–</b></div>
+    <div class="r"><span>🟢 SVS inkl. Unfallversicherung</span><b id="sv">–</b></div>
+    <div class="r"><span>🔵 Einkommensteuer</span><b id="est">–</b></div>
+    <div class="r"><span>🟠 Umsatzsteuer-Zahllast</span><b id="ust">–</b></div>
+    <div class="r"><span>Übrig pro Monat</span><b id="mon">–</b></div>
+  </div>
+  <div class="card">
+    <label for="rg">Neue Rechnung, Netto in €</label><input id="rg" type="number" inputmode="decimal" placeholder="z. B. 1000">
+    <div class="mu" id="rgres">Betrag eintragen, um die Rücklage für diese Rechnung zu sehen.</div>
+  </div>
+  <p class="warn">Nicht berücksichtigt: Gewinnfreibetrag über den Grundfreibetrag hinaus, Absetzbeträge, weitere Einkünfte, SVS-Nachbemessung. Vorsteuer wird mit 20 % der Ausgaben angenommen.</p>
+</section>
+
+<section class="view" id="v-rechnung">
+  <h1>Rechnung erstellen</h1>
+  <div class="card" id="gate"><h3>🔒 Nur für Pro</h3><p class="mu">Rechnungen mit PDF-Export gehören zu Pro. Gib deinen Lizenzschlüssel auf der Preisseite ein.</p><a class="btn" href="#preise">Zu den Preisen</a></div>
+  <div id="invbody" style="display:none">
+
+<div class="card"><h2>Absender (du)</h2>
+  <label for="r_firm">Firmenname</label><input id="r_firm" placeholder="Dein Firmenname">
+  <label for="r_logo">Logo auf der Rechnung (optional)</label><input id="r_logo" type="file" accept="image/png,image/jpeg"><button class="btn o" id="r_lx" type="button" style="margin:0 0 10px">Logo entfernen</button>
+  <label for="r_nm">Inhaber / Name</label><input id="r_nm" placeholder="Max Muster">
+  <label for="r_ad">Adresse</label><textarea id="r_ad" placeholder="Musterstraße 1&#10;1010 Wien"></textarea>
+  <div class="g2"><div><label for="r_uid">UID-Nummer</label><input id="r_uid" placeholder="ATU12345678"></div><div><label for="r_ml">E-Mail</label><input id="r_ml" type="email" placeholder="deine@mail.at"></div></div>
+  <label for="r_web">Webseite</label><input id="r_web" placeholder="www.deine-seite.at">
+</div>
+
+<div class="card"><h2>Kunde</h2>
+  <label for="r_cs">Kunde aus deiner Liste</label><select id="r_cs"></select>
+  <label for="r_kn">Name oder Firma</label><input id="r_kn">
+  <label for="r_ka">Adresse</label><textarea id="r_ka"></textarea>
+  <div class="g2"><div><label for="r_ku">UID des Kunden (optional)</label><input id="r_ku"></div><div><label for="r_km">E-Mail des Kunden</label><input id="r_km" type="email"></div></div>
+</div>
+
+<div class="card"><h2>Rechnung</h2>
+  <label for="r_tl">Vorlage laden (wiederkehrende Rechnung)</label><select id="r_tl"></select>
+  <div class="g2"><div><label for="r_nr">Rechnungsnummer</label><input id="r_nr"></div><div><label for="r_dt">Rechnungsdatum</label><input id="r_dt" type="date"></div></div>
+  <div class="g2"><div><label for="r_ld">Leistungszeitraum</label><input id="r_ld" placeholder="z. B. November 2026"></div><div><label for="r_zz">Zahlungsziel (Tage)</label><input id="r_zz" type="number" inputmode="numeric" value="14"></div></div>
+  <div class="g2"><div><label for="r_pm">Preise eingegeben als</label><select id="r_pm"><option value="b">Brutto (inkl. USt)</option><option value="n">Netto (zzgl. USt)</option></select></div>
+  <div><label for="r_sa">Umsatzsteuer</label><select id="r_sa"><option value="20">20 %</option><option value="10">10 %</option><option value="0">0 % Kleinunternehmer</option></select></div></div>
+</div>
+
+<div class="card"><h2>Positionen</h2><div id="r_rows"></div><button class="btn o" id="r_add" type="button">+ Position</button></div>
+
+<div class="card"><h2>Zahlung</h2>
+  <label for="r_ih">Kontoinhaber</label><input id="r_ih">
+  <div class="g2"><div><label for="r_ib">IBAN</label><input id="r_ib" placeholder="AT00 0000 0000 0000 0000"></div><div><label for="r_bc">BIC</label><input id="r_bc"></div></div>
+  <label for="r_pl">Zahlungslink (optional, z. B. Stripe)</label><input id="r_pl" type="url" placeholder="https://…">
+  <label for="r_nt">Hinweis am Ende (optional)</label><textarea id="r_nt" placeholder="Vielen Dank für dein Vertrauen!"></textarea>
+</div>
+
+<div class="acts"><button class="btn" id="r_dl" type="button">PDF herunterladen</button><button class="btn o" id="r_pr" type="button">Drucken</button><a class="btn o" id="r_mail" href="#">E-Mail an Kunden</a><button class="btn o" id="r_nx" type="button">Nächste Nummer</button><button class="btn o" id="r_sv" type="button">In Übersicht speichern</button><button class="btn o" id="r_tp" type="button">Als Vorlage speichern</button></div>
+<p class="mu" id="r_dm">Lade die PDF herunter und hänge sie an deine E-Mail an.</p>
+
+<div class="printable"><div class="sheet" id="r_sheet"></div></div>
+  </div>
+</section>
+
+<section class="view" id="v-uebersicht">
+  <h1>Übersicht</h1>
+  <div class="card" id="gate2"><h3>🔒 Nur für Pro</h3><p class="mu">Kundenliste und Jahresübersicht gehören zu Pro. Gib deinen Lizenzschlüssel auf der Preisseite ein.</p><a class="btn" href="#preise">Zu den Preisen</a></div>
+  <div id="ubody" style="display:none">
+    <h2>Jahresübersicht</h2>
+    <div class="card"><select id="yy"></select><div id="ytot"></div><div class="ybars" id="ybars"></div><div id="yl"></div><p style="margin-top:12px"><button class="pbtn" id="up">Jahresumsatz in den Rechner übernehmen</button></p></div>
+    <h2>Kunden</h2>
+    <div class="card"><input id="cn" placeholder="Name oder Firma"><textarea id="ca" placeholder="Adresse"></textarea><button class="pbtn" id="cb">Kunde hinzufügen</button><div id="cl" style="margin-top:8px"></div></div>
+  </div>
+</section>
+
+<section class="view" id="v-fristen">
+  <h1>Fristen</h1>
+  <div class="card"><div class="mu">Nächster Termin</div><div class="big" id="nx">–</div><div class="mu" id="nxs"></div></div>
+  <div class="card" id="dls"></div>
+  <p class="warn">Ohne Gewähr. Bei Fristen, die auf ein Wochenende oder einen Feiertag fallen, gelten Sonderregeln. Prüfe die Termine in FinanzOnline und im SVS-Portal.</p>
+</section>
+
+<section class="view" id="v-tools">
+  <h1>Pro-Tools</h1>
+  <div class="card" id="gate3"><h3>🔒 Nur für Max</h3><p class="mu">Diese Werkzeuge gehören zu Max. Gib deinen Max-Schlüssel (er beginnt mit MAX-) auf der Preisseite ein. Ein Pro-Schlüssel reicht dafür nicht.</p><a class="btn" href="#preise">Zu den Preisen</a></div>
+  <div id="tbody" style="display:none">
+    <div class="seg" id="tseg"><button data-t="op" class="on">Offen</button><button data-t="uva">UVA</button><button data-t="kg">Grenze</button><button data-t="sr">Stunde</button><button data-t="ex">Export</button></div>
+
+    <div class="tp on" id="t_op">
+      <div class="kp" id="t_ok"></div><div id="t_ol"></div>
+      <div class="card" id="t_mh" style="display:none"><h2>Mahnung erstellen</h2>
+        <label for="t_ms">Stufe</label><select id="t_ms"><option value="0">Zahlungserinnerung</option><option value="1">1. Mahnung</option><option value="2">Letzte Mahnung</option></select>
+        <div class="sheet" id="t_sh"></div>
+        <div class="acts"><button class="btn" id="t_md" type="button">PDF herunterladen</button><button class="btn o" id="t_mc" type="button">Schließen</button></div><div class="mu" id="t_mm"></div></div>
+    </div>
+
+    <div class="tp" id="t_uva">
+      <div class="card"><div class="g2"><div><label for="t_uy">Jahr</label><select id="t_uy"></select></div><div><label for="t_uq">Quartal</label><select id="t_uq"><option value="0">1. Quartal</option><option value="1">2. Quartal</option><option value="2">3. Quartal</option><option value="3">4. Quartal</option></select></div></div><div id="t_ur"></div>
+        <p class="warn">Hilfsrechnung nach Rechnungsdatum. Prüfe sie vor der Abgabe in FinanzOnline mit deinem Steuerberater.</p></div>
+      <div class="card"><h2>Ausgabe erfassen (für die Vorsteuer)</h2>
+        <div class="g2"><div><label for="t_ed">Datum</label><input id="t_ed" type="date"></div><div><label for="t_er">USt-Satz</label><select id="t_er"><option value="20">20 %</option><option value="10">10 %</option><option value="0">0 %</option></select></div></div>
+        <label for="t_en">Bezeichnung</label><input id="t_en"><label for="t_ev">Betrag netto (€)</label><input id="t_ev" type="number" inputmode="decimal" step="0.01">
+        <button class="btn" id="t_ea" type="button">Ausgabe speichern</button><div id="t_el" style="margin-top:10px"></div></div>
+    </div>
+
+    <div class="tp" id="t_kg"><div class="card" id="t_kr"></div></div>
+
+    <div class="tp" id="t_sr"><div class="card"><h2>Welchen Stundensatz brauchst du?</h2>
+      <label for="t_w">Wunsch-Netto pro Monat nach Steuern und SVS (€)</label><input id="t_w" type="number" inputmode="decimal" value="2500">
+      <label for="t_f">Fixkosten pro Monat (€)</label><input id="t_f" type="number" inputmode="decimal" value="100">
+      <div class="g2"><div><label for="t_u">Freie Wochen im Jahr</label><input id="t_u" type="number" inputmode="decimal" value="6"></div><div><label for="t_h">Wochenstunden</label><input id="t_h" type="number" inputmode="decimal" value="40"></div></div>
+      <label for="t_a">Anteil verrechenbarer Stunden (%)</label><input id="t_a" type="number" inputmode="decimal" value="60">
+      <div id="t_sres"></div></div></div>
+
+    <div class="tp" id="t_ex"><div class="card"><h2>Export für den Steuerberater</h2><p class="mu">Alle Einnahmen (gespeicherte Rechnungen) und Ausgaben eines Jahres als CSV-Tabelle, passend für Excel.</p>
+      <label for="t_xy">Jahr</label><select id="t_xy"></select><button class="btn" id="t_xb" type="button">CSV herunterladen</button><div class="mu" id="t_xm" style="margin-top:8px"></div></div></div>
+  </div>
+</section>
+
+<section class="view" id="v-preise">
+  <h1>Preise</h1>
+  <p class="mu">Der Rechner bleibt kostenlos. Pro ist für alle, die ihre Rechnungen und Fristen sauber im Griff haben wollen.</p>
+  <div class="seg"><button id="pm" class="on">Monatlich</button><button id="py">Jährlich <small>−20 %</small></button></div>
+  <div class="card"><h3>Kostenlos</h3><div class="price">0 €</div>
+    <ul class="ft"><li>Rücklagenrechner mit SVS, Steuer und USt</li><li>Fristen mit Countdown</li><li>Wissensseite</li></ul></div>
+  <div class="card"><h3>Pro</h3>
+    <div class="price" id="pp">8,50 €<small> / Monat</small></div><div class="mu" id="pn">jederzeit kündbar</div>
+    <ul class="ft"><li>Alles aus Kostenlos</li><li>Rechnungen mit PDF-Export und eigenem Logo</li><li>Wiederkehrende Rechnungen (Vorlagen)</li><li>Kundenliste</li><li>Jahresübersicht mit Umsatz-Übernahme</li></ul>
+    <button class="pbtn" id="pb">Pro holen</button><div class="mu" id="pmsg" style="margin-top:8px"></div></div>
+  <div class="card pro"><span class="tag">Alles drin</span><h3>Max</h3>
+    <div class="price" id="xp">14,90 €<small> / Monat</small></div><div class="mu" id="xn">jederzeit kündbar</div>
+    <ul class="ft"><li>Alles aus Pro</li><li>Offene Posten und Mahnungen als PDF</li><li>UVA-Helfer pro Quartal</li><li>Kleinunternehmer-Ampel (55.000-€-Grenze)</li><li>Stundensatz-Rechner</li><li>Export für den Steuerberater (CSV)</li><li class="soon">Fristen-Erinnerung per E-Mail (mit eigener Domain)</li></ul>
+    <button class="pbtn" id="xb">Max holen</button><div class="mu" id="xmsg" style="margin-top:8px"></div></div>
+  <div class="card"><h3>Lizenzschlüssel</h3><p class="mu" id="ks">Nach dem Kauf bekommst du einen Schlüssel per E-Mail.</p><input id="lk" placeholder="Lizenzschlüssel (RAT-… oder MAX-…)" autocapitalize="characters" autocomplete="off" spellcheck="false"><button class="pbtn" id="kb">Freischalten</button><button class="mb" id="kx" style="display:none;margin:8px 0 0">Schlüssel entfernen</button><div class="mu" id="km" style="margin-top:8px"></div></div>
+  <p class="warn">Alle Preise in Euro. Die Angaben der App sind Schätzungen und keine Steuerberatung.</p>
+</section>
+
+<section class="view" id="v-wissen">
+  <h1>Wissen</h1>
+  <div class="card">
+    <details open><summary>Brauche ich ein Gewerbe?</summary><p class="mu">Wenn du regelmäßig, selbständig und mit Gewinnabsicht arbeitest, in der Regel ja. Die Anmeldung ist kostenlos, die Einordnung klärst du mit der Wirtschaftskammer.</p></details>
+    <details><summary>Was ist der Grundfreibetrag?</summary><p class="mu">15 % deines Gewinns, bis maximal 33.000 € Gewinn, sind automatisch steuerfrei (höchstens 4.950 €). Dafür brauchst du keine Investition.</p></details>
+    <details><summary>Wer ist Kleinunternehmer?</summary><p class="mu">Bis 55.000 € Jahresumsatz netto bist du von der Umsatzsteuer befreit. Du weist dann keine USt aus, darfst aber auch keine Vorsteuer abziehen.</p></details>
+    <details><summary>Wie hoch sind die SVS-Beiträge?</summary><p class="mu">2026 sind es 26,83 % der Beitragsgrundlage (Pension, Krankenversicherung, Selbständigenvorsorge) plus 12,95 € Unfallversicherung im Monat. Die Beitragsgrundlage liegt zwischen 551,10 € und 8.085 € pro Monat.</p></details>
+    <details><summary>Woher stammen die Zahlen?</summary><p class="mu">Aus den veröffentlichten Werten für 2026 von BMF, USP und WKO. Sie ändern sich jedes Jahr und werden hier vereinfacht verwendet.</p></details>
+  </div>
+  <p class="warn">Keine Steuer- oder Rechtsberatung.</p>
+</section>
+
+</div>
+<nav id="nav">
+  <a href="#start" data-v="start"><b>🏠</b>Start</a>
+  <a href="#rechner" data-v="rechner"><b>🧮</b>Rechner</a>
+  <a href="#rechnung" data-v="rechnung"><b>🧾</b>Rechnung</a>
+  <a href="#fristen" data-v="fristen"><b>📅</b>Fristen</a>
+  <a href="#uebersicht" data-v="uebersicht"><b>📊</b>Übersicht</a>
+  <a href="#tools" data-v="tools"><b>🧰</b>Tools</a>
+  <a href="#preise" data-v="preise"><b>⭐</b>Preise</a>
+  <a href="#wissen" data-v="wissen"><b>💡</b>Wissen</a>
+</nav>
+
+<script>
+var $=function(i){return document.getElementById(i)};
+var eur=function(v){return v.toLocaleString("de-AT",{maximumFractionDigits:0})+" €"};
+var eur2=function(v){return v.toLocaleString("de-AT",{minimumFractionDigits:2,maximumFractionDigits:2})+" €"};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var ids=["um","au","kl","rg"],S={};
+try{S=JSON.parse(localStorage.getItem("rat1")||"{}")}catch(e){}
+function save(){ids.forEach(function(i){S[i]=$(i).type==="checkbox"?$(i).checked:$(i).value});try{localStorage.setItem("rat1",JSON.stringify(S))}catch(e){}}
+ids.forEach(function(i){if(S[i]!==undefined){if($(i).type==="checkbox")$(i).checked=S[i];else $(i).value=S[i]}});
+
+var TAR=[[13539,0],[21992,.2],[36458,.3],[70365,.4],[104859,.48],[1e6,.5],[Infinity,.55]];
+function est(x){var t=0,lo=0;for(var i=0;i<TAR.length;i++){if(x>lo)t+=(Math.min(x,TAR[i][0])-lo)*TAR[i][1];lo=TAR[i][0]}return t}
+function calc(){
+  var um=parseFloat($("um").value)||0,au=parseFloat($("au").value)||0,kl=$("kl").checked;
+  var gw=Math.max(0,um-au),bg=Math.min(97020,Math.max(6613.2,gw));
+  var sv=um>0?bg*.2683+155.4:0,zu=Math.max(0,gw-sv),e=est(Math.max(0,zu-Math.min(gw,33000)*.15));
+  var ust=kl?0:Math.max(0,(um-au)*.2),tot=sv+e+ust;
+  if(um<=0){["quote","gw","sv","est","ust","mon"].forEach(function(k){$(k).textContent="–"});$("bar").innerHTML="";rg(0);return}
+  $("quote").textContent=(tot/um*100).toFixed(1).replace(".",",")+" %";
+  $("qsub").textContent="deines Netto-Umsatzes, also "+eur(tot)+" pro Jahr";
+  $("gw").textContent=eur(gw);$("sv").textContent=eur(sv);$("est").textContent=eur(e);$("ust").textContent=eur(ust);$("mon").textContent=eur((gw-sv-e)/12);
+  $("bar").innerHTML=[[sv,"#2e9e75"],[e,"#3b82c4"],[ust,"#e0902f"]].map(function(p){return '<i style="width:'+(tot?p[0]/tot*100:0)+'%;background:'+p[1]+'"></i>'}).join("");
+  rg((sv+e)/um);
+}
+function rg(q){
+  var v=parseFloat($("rg").value)||0;
+  if(!v||!q){$("rgres").textContent="Betrag eintragen, um die Rücklage für diese Rechnung zu sehen.";return}
+  var u=$("kl").checked?0:v*.2;
+  $("rgres").innerHTML="Brutto <b>"+eur(v+u)+"</b>. Lege <b>"+eur(v*q+u)+"</b> beiseite, dir bleiben "+eur(v-v*q)+".";
+}
+function inv(){}
+function fr(){
+  var now=new Date(),y=now.getFullYear(),L=[];
+  [[1,15,"SVS-Quartalsbeitrag & ESt-Vorauszahlung"],[4,15,"SVS-Quartalsbeitrag & ESt-Vorauszahlung"],[7,15,"SVS-Quartalsbeitrag & ESt-Vorauszahlung"],[10,15,"SVS-Quartalsbeitrag & ESt-Vorauszahlung"]].forEach(function(a){L.push([new Date(y,a[0]+(a[0]==1?0:0),a[1]),a[2]])});
+  var q=[[1,"SVS/ESt-Vorauszahlung (1. Quartal)"],[4,"SVS/ESt-Vorauszahlung (2. Quartal)"],[7,"SVS/ESt-Vorauszahlung (3. Quartal)"],[10,"SVS/ESt-Vorauszahlung (4. Quartal)"]];
+  L=[];q.forEach(function(a,i){var m=[1,4,7,10][i];L.push([new Date(y,m,15),a[1]])});
+  [[4,15,"UVA für das 1. Quartal"],[7,15,"UVA für das 2. Quartal"],[10,15,"UVA für das 3. Quartal"]].forEach(function(a){L.push([new Date(y,a[0],a[1]),a[2]])});
+  L.push([new Date(y,5,30),"Einkommensteuererklärung Vorjahr (FinanzOnline)"]);
+  L.push([new Date(y+1,1,15),"UVA 4. Quartal & SVS-Beitrag Jänner"]);
+  L.sort(function(a,b){return a[0]-b[0]});
+  var t0=new Date(y,now.getMonth(),now.getDate()),nx=null;
+  L.forEach(function(x){if(!nx&&x[0]>=t0)nx=x});
+  $("dls").innerHTML=L.map(function(x){var on=x===nx;return '<div class="dl'+(on?" next":"")+'"><span>'+x[1]+'</span><b>'+x[0].toLocaleDateString("de-AT",{day:"2-digit",month:"2-digit",year:"numeric"})+"</b></div>"}).join("");
+  if(nx){var d=Math.round((nx[0]-t0)/864e5);$("nx").textContent=d===0?"Heute":"in "+d+" Tagen";$("nxs").textContent=nx[1]+", "+nx[0].toLocaleDateString("de-AT")}
+}
+function route(){
+  var h=(location.hash||"#start").slice(1);if(!$("v-"+h))h="start";
+  document.querySelectorAll(".view").forEach(function(v){v.classList.toggle("on",v.id==="v-"+h)});
+  document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("on",a.dataset.v===h)});
+  window.scrollTo(0,0);
+}
+ids.forEach(function(i){$(i).addEventListener("input",function(){save();calc();inv()});$(i).addEventListener("change",function(){save();calc();inv()})});
+var yr=false,PAY={m:"",y:"",xm:"",xy:""};
+function pr(){$("pp").innerHTML=yr?'82 €<small> / Jahr</small>':'8,50 €<small> / Monat</small>';$("pn").textContent=yr?"entspricht 6,83 € im Monat":"jederzeit kündbar";$("xp").innerHTML=yr?'143 €<small> / Jahr</small>':'14,90 €<small> / Monat</small>';$("xn").textContent=yr?"entspricht 11,92 € im Monat":"jederzeit kündbar";$("pm").classList.toggle("on",!yr);$("py").classList.toggle("on",yr)}
+$("pm").onclick=function(){yr=false;pr()};$("py").onclick=function(){yr=true;pr()};
+$("xb").onclick=function(){var u=yr?PAY.xy:PAY.xm;if(!u){$("xmsg").textContent="Die Bezahlung ist noch nicht freigeschaltet.";return}window.open(u,"_blank")};
+$("pb").onclick=function(){var u=yr?PAY.y:PAY.m;if(!u){$("pmsg").textContent="Die Bezahlung ist noch nicht freigeschaltet.";return}window.open(u,"_blank")};
+var DB={cu:[],iv:[]},YY=new Date().getFullYear();
+try{var d0=JSON.parse(localStorage.getItem("rat_db")||"null");if(d0)DB=d0}catch(e){}
+function sdb(){try{localStorage.setItem("rat_db",JSON.stringify(DB))}catch(e){}}
+function cuRender(){
+  $("cl").innerHTML=DB.cu.map(function(c,i){var t=DB.iv.filter(function(v){return v.k===c.n}).reduce(function(a,v){return a+v.n},0);return '<div class="dl"><div><b>'+esc(c.n)+'</b><div class="mu">'+eur(t)+' Umsatz</div></div><span><button class="mb" data-u="'+i+'">Verwenden</button><button class="mb" data-d="'+i+'">✕</button></span></div>'}).join("")||'<p class="mu">Noch keine Kunden.</p>';
+  if(window.__cs)window.__cs();
+}
+function ivRender(){
+  var ys={};ys[new Date().getFullYear()]=1;DB.iv.forEach(function(v){if(v.dt)ys[v.dt.slice(0,4)]=1});
+  var yl=Object.keys(ys).sort().reverse();if(!ys[YY])YY=+yl[0];
+  $("yy").innerHTML=yl.map(function(y){return '<option'+(+y===YY?" selected":"")+'>'+y+'</option>'}).join("");
+  var L=DB.iv.filter(function(v){return (v.dt||"").slice(0,4)===String(YY)}).sort(function(a,b){return a.dt<b.dt?-1:1});
+  var n=0,u=0,m=[0,0,0,0,0,0,0,0,0,0,0,0];
+  L.forEach(function(v){n+=v.n;u+=v.n*v.r/100;var k=parseInt(v.dt.slice(5,7),10)-1;if(k>=0&&k<12)m[k]+=v.n});
+  var mx=Math.max.apply(null,m)||1;
+  $("ytot").innerHTML='<div class="r"><span>Umsatz netto</span><b>'+eur(n)+'</b></div><div class="r"><span>Umsatzsteuer</span><b>'+eur(u)+'</b></div><div class="r"><span>Brutto</span><b>'+eur(n+u)+'</b></div>';
+  $("ybars").innerHTML=m.map(function(v,i){return '<div><i style="height:'+Math.round(v/mx*50)+'px"></i>'+"JFMAMJJASOND"[i]+'</div>'}).join("");
+  $("yl").innerHTML=L.map(function(v){return '<div class="dl"><span>'+esc(v.nr||"–")+" · "+esc(v.k||"–")+'</span><span><b>'+eur2(v.n)+'</b><button class="mb" data-i="'+v.id+'">✕</button></span></div>'}).join("")||'<p class="mu">Noch keine Rechnungen in '+YY+'.</p>';
+  $("up").dataset.n=Math.round(n);cuRender();
+}
+function useCu(i){var c=DB.cu[i];if(c&&window.__useCu)window.__useCu(c)}
+$("yy").onchange=function(){YY=+this.value;ivRender()};
+$("yl").onclick=function(e){var i=e.target.getAttribute("data-i");if(i){DB.iv=DB.iv.filter(function(v){return String(v.id)!==i});sdb();ivRender()}};
+$("cl").onclick=function(e){var u=e.target.getAttribute("data-u"),d=e.target.getAttribute("data-d");if(u!==null){useCu(+u);location.hash="#rechnung"}if(d!==null){DB.cu.splice(+d,1);sdb();cuRender()}};
+$("cb").onclick=function(){var n=$("cn").value.trim();if(!n)return;DB.cu.push({n:n,a:$("ca").value.trim()});$("cn").value="";$("ca").value="";sdb();cuRender()};
+$("up").onclick=function(){$("um").value=this.dataset.n||0;save();calc();location.hash="#rechner"};
+ivRender();
+var HS=["b370828cee85b337490f7822ecfffa30f9aa48a515b0a4f94cfb4ad9fdac5437","1dd1e2fe2dfebb54e98c887d8862283aafb15d6b0f56100febcb8a85b978c0a0","496100212aa25e7abaf260adc909bc3286bfce4b56dec647920a62e33b45cd0c","da54a841fdc26b280b9787bc4266b8ae447b6bbeec9765add0295cbe26bbaa76","9142023d4d533aba3604224b1084ebcd1b1b088235d18cfff07eb8ea136cbfea","894d4e282301bfd1b460f3bdaf07473291a4413cb44354891d8a0e58dd01d166","99407c7f376c3f3864f30f093912f71a611773dea5b04e48c73328299a6493f1","4c24dcb41857e2e8e10c615de21def280e0265ac5f7d8eae3d016e7f2056f83d","f464fd3cb0248b3b3a92e8b827a42a3e8c9fd94799fce94c777c971ca10548ac","64b7a18ab50e6133456387baae7520622c1005e51df524c586c802a1e5d3370a","c2178d1cc8ca8f8c9d884014d094fef117bbf4e0de630eb0f026c7333ed1718e","68fb60a40913b31fc8cf8d221ec797fc42b5083da84e871b3b68aff6bbe7b6ca","67d57bd6dcc604a283fd4d043d55e6410e850ad1f26df449f4b76c5964fcc5a0","e8208b6d78e989db738b2ddc37ccae6558b0c9789363a73b9ac50dd5e895c71c","6e15e8bd3ff4a1a1bfba5c434614e81806069b3cb7fd310bc888edd2eee5a0d2"];
+var HM=[  "2d8b2325a64e7d325a65652ccdc8168983b13e73d69e4fb0e5c81a43fe2fb1c7", "de2e64460adcb54da355df7e23df3b1176edd7517d86a240f2468aeca35438a2", "00fb536078cd2a3cd0ef7ee374b8f5c612be3a5447abd64abbe6d9858e4c77a9", "ea338ea047873e5b69589586c8ba16556ea274c4faecadfec046e723da451f39", "13d7ad4c459c4121243f38607bc8ac041473d7d77254bdff8cb31f75c9b5c435", "b2a56b96b0fb91c080ca3cc08a6052acb4c29e6b5661a08128f9cd3b88cedf66", "0ee536c5ad937ec440d111c50675233783a9b0dc64c9c783d8db68be4278b6ef", "7835bc11c611d84ac2ae9978bb2b3dd6c097e63fbf5ec221a3d459249c4efee2", "6af2806296e9e59beffe27eee7edfdc643dc7d5f190ed1b8d9835a381dbb3872", "478e9ef3df038ce4633f513751f8ff8c5e85952f662d7f306f9a54f68b4fb831", "7867decd0c9ad6d506b5923ed18b262227038b97a382fe0cce38450aa2b634cc"];
+function sha(s){return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return("0"+x.toString(16)).slice(-2)}).join("")})}
+function okKey0(k){k=String(k||"").trim().toUpperCase();if(!/^(RAT|MAX)-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(k))return Promise.resolve(0);try{return sha("rat1:"+k).then(function(h){return HM.indexOf(h)>=0?2:(HS.indexOf(h)>=0?1:0)},function(){return 0})}catch(e){return Promise.resolve(0)}}
+var GESPERRT=[]; /* Gesperrte Schlüssel hier eintragen, z. B. ["MAX-AAAA-BBBB-CCCC"] */
+function okKey(k){return okKey0(k).then(function(l){if(!l)return 0;var key=String(k).trim().toUpperCase();if(GESPERRT.indexOf(key)>=0)return 0;
+  return fetch("gesperrt.txt?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.text():""},function(){return ""}).then(function(t){return t.split(/\s+/).map(function(x){return x.toUpperCase()}).indexOf(key)>=0?0:l})})}
+var pro=false,mx=false;try{okKey(localStorage.getItem("rat_key")).then(function(ok){pro=ok>0;mx=ok>1;gate()})}catch(e){}
+function gate(){$("gate").style.display=pro?"none":"block";$("invbody").style.display=pro?"block":"none";$("gate2").style.display=pro?"none":"block";$("kx").style.display=pro?"inline-block":"none";$("ubody").style.display=pro?"block":"none";$("ks").textContent=pro?(mx?"Max ist aktiv. Danke!":"Pro ist aktiv. Danke!"):"Nach dem Kauf bekommst du einen Schlüssel per E-Mail.";$("pb").style.display=pro?"none":"block";$("xb").style.display=mx?"none":"block"}
+$("kx").onclick=function(){pro=false;mx=false;try{localStorage.removeItem("rat_key")}catch(e){}$("km").textContent="Schlüssel entfernt.";gate()};
+$("kb").onclick=function(){var v=$("lk").value;okKey(v).then(function(ok){if(ok){pro=true;mx=ok>1;try{localStorage.setItem("rat_key",v.trim().toUpperCase())}catch(e){}$("km").textContent=ok>1?"Max freigeschaltet. Rechnungen und Tools sind jetzt offen.":"Pro freigeschaltet. Rechnungen und Übersicht sind jetzt offen.";gate()}else{$("km").textContent="Dieser Schlüssel ist ungültig."}})};
+gate();
+window.addEventListener("hashchange",route);
+calc();fr();route();
+</script>
+<script>
+/* Eigenständige Version: stellt den Datei-Download bereit, wenn die Seite nicht in Claude läuft */
+if(!window.claude){window.claude={use:async function(n){if(n!=="downloads")return null;return{save:async function(o){
+  var t=/\.csv$/i.test(o.filename)?"text/csv;charset=utf-8":/\.json$/i.test(o.filename)?"application/json":"";
+  var b=o.data instanceof Blob?o.data:new Blob([o.data],{type:t}),a=document.createElement("a");
+  a.href=URL.createObjectURL(b);a.download=o.filename;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1500)}}}}}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(function(){
+
+var $=function(i){return document.getElementById("r_"+i)};
+var F=["firm","nm","ad","uid","ml","web","kn","ka","ku","km","nr","dt","ld","zz","pm","sa","ih","ib","bc","pl","nt"];
+var R=[{d:"",q:1,p:0}],S={};
+try{S=JSON.parse(localStorage.getItem("rv1")||"{}")}catch(e){}
+F.forEach(function(i){if(S[i]!==undefined)$(i).value=S[i]});
+if(S.R&&S.R.length)R=S.R;
+if(!$("dt").value)$("dt").value=new Date().toISOString().slice(0,10);
+if(!$("nr").value)$("nr").value=new Date().getFullYear()+"-001";
+function save(){F.forEach(function(i){S[i]=$(i).value});S.R=R;try{localStorage.setItem("rv1",JSON.stringify(S))}catch(e){}}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function br(s){return esc(s).replace(/\n/g,"<br>")}
+function eur(v){return v.toLocaleString("de-AT",{minimumFractionDigits:2,maximumFractionDigits:2})+" €"}
+function dd(d){return d.toLocaleDateString("de-AT",{day:"2-digit",month:"2-digit",year:"numeric"})}
+function rows(){
+  $("rows").innerHTML=R.map(function(r,i){return '<div class="g3"><div><label>Bezeichnung</label><input data-i="'+i+'" data-f="d" value="'+esc(r.d)+'"></div><div><label>Menge</label><input data-i="'+i+'" data-f="q" type="number" inputmode="decimal" value="'+r.q+'"></div><div><label>Einzelpreis €</label><input data-i="'+i+'" data-f="p" type="number" inputmode="decimal" step="0.01" value="'+r.p+'"></div><button class="x" data-x="'+i+'" type="button" aria-label="Entfernen">✕</button></div>'}).join("");
+}
+function sums(){
+  var rate=parseFloat($("sa").value)||0,gross=$("pm").value==="b",sum=0;
+  R.forEach(function(r){sum+=(parseFloat(r.q)||0)*(parseFloat(r.p)||0)});
+  var n,u,b;
+  if(gross){b=Math.round(sum*100)/100;n=Math.round(b/(1+rate/100)*100)/100;u=Math.round((b-n)*100)/100}
+  else{n=Math.round(sum*100)/100;u=Math.round(n*rate)/100;b=Math.round((n+u)*100)/100}
+  return{rate:rate,n:n,u:u,b:b,gross:gross};
+}
+function due(){var d=new Date($("dt").value||Date.now());d.setDate(d.getDate()+(parseInt($("zz").value,10)||0));return d}
+function brand(){var f=$("firm").value.trim(),lg="";try{lg=localStorage.getItem("rat_logo")||""}catch(e){}
+  var im=/^data:image\/(png|jpeg);base64,[A-Za-z0-9+\/=]+$/.test(lg)?'<img src="'+lg+'" alt="" style="max-height:52px;max-width:160px;display:block;margin-bottom:6px">':'';
+  return im+(f?'<div style="font-size:22px;font-weight:800;letter-spacing:-.3px">'+esc(f)+'</div>':(im?'':'<div class="sm">Dein Firmenname</div>'))}
+function render(){
+  var s=sums(),d=$("dt").value?new Date($("dt").value):new Date(),du=due();
+  var items=R.map(function(r){var q=parseFloat(r.q)||0,p=parseFloat(r.p)||0;return '<tr><td>'+esc(r.d)+'</td><td class="rt">'+String(q).replace(".",",")+'</td><td class="rt">'+eur(p)+'</td><td class="rt">'+eur(q*p)+'</td></tr>'}).join("");
+  var taxrows=s.rate?'<div><span>Zwischensumme netto</span><span>'+eur(s.n)+'</span></div><div><span>Umsatzsteuer '+s.rate+' %</span><span>'+eur(s.u)+'</span></div>':'';
+  var note=s.rate?"":'<p class="sm">Umsatzsteuerfrei gemäß § 6 Abs 1 Z 27 UStG (Kleinunternehmerregelung).</p>';
+  var pay='<div class="pay"><b>Bitte überweise '+eur(s.b)+' bis '+dd(du)+'.</b><br>'+(($("ih").value||$("ib").value)?esc($("ih").value||$("firm").value)+'<br>IBAN: '+esc($("ib").value)+($("bc").value?' · BIC: '+esc($("bc").value):'')+'<br>':'')+'Verwendungszweck: '+esc($("nr").value)+($("pl").value?'<br>Online bezahlen: <a href="'+esc($("pl").value)+'" style="color:#17694d">'+esc($("pl").value)+'</a>':'')+'</div>';
+  $("sheet").innerHTML='<div class="hd">'+brand()+'<div style="text-align:right"><b style="font-size:20px;letter-spacing:1px">RECHNUNG</b><br>Nr. '+esc($("nr").value||"–")+'<br>Datum: '+dd(d)+(($("ld").value)?'<br>Leistung: '+esc($("ld").value):'')+'</div></div>'
+  +'<div class="hd" style="margin-top:22px"><div><div class="sm">Rechnung an</div><b>'+esc($("kn").value||"Kunde")+'</b><br>'+br($("ka").value)+($("ku").value?'<br>UID: '+esc($("ku").value):'')+'</div><div style="text-align:right"><div class="sm">Absender</div>'+esc($("firm").value)+'<br>'+(($("nm").value)?esc($("nm").value)+'<br>':'')+br($("ad").value)+($("uid").value?'<br>UID: '+esc($("uid").value):'')+'</div></div>'
+  +'<table><tr><th>Bezeichnung</th><th class="rt">Menge</th><th class="rt">Einzelpreis'+(s.gross&&s.rate?' (brutto)':'')+'</th><th class="rt">Betrag</th></tr>'+items+'</table>'
+  +'<div class="tot">'+taxrows+'<div class="gt"><span>Gesamt</span><span>'+eur(s.b)+'</span></div></div>'+note+pay
+  +($("nt").value?'<p style="margin-top:14px">'+br($("nt").value)+'</p>':'')
+  +'<div class="ft">'+esc($("firm").value)+(($("web").value)?' · '+esc($("web").value):'')+(($("ml").value)?' · '+esc($("ml").value):'')+'</div>';
+  var sub="Rechnung "+$("nr").value+" von "+$("firm").value;
+  var body="Hallo "+$("kn").value+",\n\nanbei deine Rechnung "+$("nr").value+" über "+eur(s.b)+".\nBitte überweise den Betrag bis "+dd(du)+" (Verwendungszweck: "+$("nr").value+")."+($("pl").value?"\nOnline bezahlen: "+$("pl").value:"")+"\n\nViele Grüße\n"+($("nm").value||$("firm").value);
+  $("mail").href="mailto:"+encodeURIComponent($("km").value)+"?subject="+encodeURIComponent(sub)+"&body="+encodeURIComponent(body);
+}
+function upd(){save();render()}
+F.forEach(function(i){$(i).addEventListener("input",upd);$(i).addEventListener("change",upd)});
+$("rows").addEventListener("input",function(e){var i=e.target.getAttribute("data-i"),f=e.target.getAttribute("data-f");if(i!==null){R[+i][f]=f==="d"?e.target.value:e.target.value;upd()}});
+$("rows").addEventListener("click",function(e){var x=e.target.getAttribute("data-x");if(x!==null){R.splice(+x,1);if(!R.length)R.push({d:"",q:1,p:0});rows();upd()}});
+$("add").onclick=function(){R.push({d:"",q:1,p:0});rows();upd()};
+$("nx").onclick=function(){var v=$("nr").value,m=/^(.*?)(\d+)$/.exec(v);if(m){var n=String(parseInt(m[2],10)+1);while(n.length<m[2].length)n="0"+n;$("nr").value=m[1]+n}else $("nr").value=v+"-2";upd()};
+$("pr").onclick=function(){try{window.print()}catch(e){}};
+$("dl").onclick=async function(){
+  var m=$("dm"),b=this;
+  try{
+    var dlc=await claude.use("downloads");
+    if(!dlc||!window.html2canvas||!window.jspdf){m.textContent="Der PDF-Download ist hier nicht verfügbar. Nutze Drucken.";return}
+    b.disabled=true;m.textContent="PDF wird erstellt …";
+    var cv=await html2canvas($("sheet"),{scale:2,backgroundColor:"#ffffff"});
+    var pdf=new window.jspdf.jsPDF({unit:"mm",format:"a4"});
+    var M=10,w=210-2*M,h=cv.height*w/cv.width,H=297-2*M;
+    if(h<=H){pdf.addImage(cv.toDataURL("image/jpeg",.92),"JPEG",M,M,w,h)}
+    else{var pages=Math.ceil(h/H),ph=Math.floor(cv.height*H/h);
+      for(var i=0;i<pages;i++){var c2=document.createElement("canvas");c2.width=cv.width;c2.height=Math.min(ph,cv.height-i*ph);c2.getContext("2d").drawImage(cv,0,i*ph,cv.width,c2.height,0,0,cv.width,c2.height);if(i)pdf.addPage();pdf.addImage(c2.toDataURL("image/jpeg",.92),"JPEG",M,M,w,c2.height*w/cv.width)}}
+    await dlc.save({filename:"Rechnung-"+($("nr").value||"neu").replace(/[^\w.-]+/g,"_")+".pdf",data:pdf.output("blob")});
+    m.textContent="PDF gespeichert. Hänge sie an deine E-Mail an.";
+  }catch(e){m.textContent=(e&&e.code==="declined")?"Speichern abgebrochen.":"Die PDF konnte nicht erstellt werden. Nutze Drucken oder öffne die Seite direkt im Browser."}
+  b.disabled=false;
+};
+rows();render();
+
+function cs(){$("cs").innerHTML='<option value="">Kunde wählen …</option>'+DB.cu.map(function(c,i){return '<option value="'+i+'">'+esc(c.n)+'</option>'}).join("")}
+function use(c){if(/@/.test(c.n))$("km").value=c.n;else{$("kn").value=c.n;if(c.a)$("ka").value=c.a}upd()}
+window.__cs=cs;window.__useCu=function(c){use(c)};
+$("cs").onchange=function(){var c=DB.cu[+this.value];if(c)use(c)};
+$("sv").onclick=function(){
+  var s=sums(),nr=$("nr").value,kn=$("kn").value.trim(),m=$("dm");
+  if(!s.n){m.textContent="Bitte zuerst Positionen eintragen.";return}
+  if(DB.iv.some(function(v){return v.nr===nr})){m.textContent="Diese Rechnungsnummer ist schon gespeichert.";return}
+  DB.iv.push({id:Date.now(),nr:nr,dt:$("dt").value,k:kn,l:(R[0]&&R[0].d)||"",n:s.n,r:s.rate,b:s.b,due:due().toISOString().slice(0,10),paid:""});
+  if(kn&&!DB.cu.some(function(c){return c.n===kn}))DB.cu.push({n:kn,a:$("ka").value.trim()});
+  sdb();ivRender();cs();m.textContent="Gespeichert, du findest sie unter Übersicht.";$("nx").onclick();
+};
+$("logo").onchange=function(){var f=this.files&&this.files[0];if(!f)return;if(f.size>3e6){$("dm").textContent="Das Bild ist zu groß (max. 3 MB).";return}
+  var r=new FileReader();r.onload=function(){var im=new Image();im.onload=function(){var k=Math.min(1,320/im.width),c=document.createElement("canvas");c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);c.getContext("2d").drawImage(im,0,0,c.width,c.height);
+    try{localStorage.setItem("rat_logo",c.toDataURL("image/png"))}catch(e){$("dm").textContent="Das Logo konnte nicht gespeichert werden.";return}render()};
+    im.onerror=function(){$("dm").textContent="Das Bild konnte nicht gelesen werden."};im.src=String(r.result)};r.readAsDataURL(f)};
+$("lx").onclick=function(){try{localStorage.removeItem("rat_logo")}catch(e){}$("logo").value="";render()};
+function tl(){DB.tp=DB.tp||[];$("tl").innerHTML='<option value="">Vorlage wählen …</option>'+DB.tp.map(function(t,i){return '<option value="'+i+'">'+esc(t.name)+'</option>'}).join("")}
+$("tp").onclick=function(){DB.tp=DB.tp||[];DB.tp.push({id:Date.now(),name:($("kn").value.trim()||"Vorlage")+" · "+((R[0]&&R[0].d)||""),kn:$("kn").value,ka:$("ka").value,ku:$("ku").value,km:$("km").value,ld:$("ld").value,zz:$("zz").value,pm:$("pm").value,sa:$("sa").value,nt:$("nt").value,R:JSON.parse(JSON.stringify(R))});sdb();tl();$("dm").textContent="Vorlage gespeichert."};
+$("tl").onchange=function(){var t=(DB.tp||[])[+this.value];if(!t)return;["kn","ka","ku","km","ld","zz","pm","sa","nt"].forEach(function(k){$(k).value=t[k]});R=JSON.parse(JSON.stringify(t.R));$("dt").value=new Date().toISOString().slice(0,10);rows();upd();$("dm").textContent="Vorlage geladen. Prüfe Nummer und Datum."};
+tl();
+cs();window.addEventListener("hashchange",cs);
+})();
+</script>
+<script>
+(function(){
+var K=["rat1","rat_db","rv1","rat_key","rat_logo"],$=function(i){return document.getElementById(i)};
+function msg(t){$("bm").textContent=t}
+function pack(){var d={};K.forEach(function(k){try{var v=localStorage.getItem(k);if(v!==null)d[k]=v}catch(e){}});return JSON.stringify({app:"ruecklage-at",v:1,saved:new Date().toISOString(),data:d})}
+$("bx").onclick=async function(){
+  var t=pack();
+  try{var dl=await claude.use("downloads");if(!dl)throw 0;
+    await dl.save({filename:"ruecklage-at-daten.json",data:t});
+    msg("Gesichert. Öffne die App auf dem anderen Gerät und lade die Datei dort.");
+  }catch(e){$("bt").value=t;msg("Die Datei konnte hier nicht gespeichert werden. Kopiere den Text im Feld und füge ihn auf dem anderen Gerät ein.")}
+};
+function ok(k,v){if(typeof v!=="string"||v.length>2000000)return false;if(k==="rat_logo")return v.length<500000&&/^data:image\/(png|jpeg);base64,[A-Za-z0-9+\/=]+$/.test(v);if(k==="rat_key")return /^(RAT|MAX)-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}$/.test(v);try{JSON.parse(v);return true}catch(e){return false}}
+function imp(t){
+  var o,n=0;
+  try{o=JSON.parse(t)}catch(e){msg("Das ist keine gültige Sicherung.");return}
+  if(!o||o.app!=="ruecklage-at"||!o.data||typeof o.data!=="object"){msg("Das ist keine Sicherung dieser App.");return}
+  K.forEach(function(k){var v=o.data[k];if(ok(k,v)){try{localStorage.setItem(k,v);n++}catch(e){}}});
+  if(!n){msg("In der Sicherung waren keine Daten.");return}
+  msg("Daten geladen. Die Seite wird neu geladen …");
+  setTimeout(function(){try{location.reload()}catch(e){msg("Daten geladen. Bitte lade die Seite neu.")}},700);
+}
+$("bf").onchange=function(){var f=this.files&&this.files[0];if(!f)return;if(f.size>2000000){msg("Die Datei ist zu groß.");return}var r=new FileReader();r.onload=function(){imp(String(r.result))};r.onerror=function(){msg("Die Datei konnte nicht gelesen werden.")};r.readAsText(f)};
+$("bi").onclick=function(){imp($("bt").value)};
+})();
+</script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function iso(d){return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function add(s,n){var d=new Date(s+'T12:00:00');d.setDate(d.getDate()+n);return iso(d)}
+function dd(s){return new Date(s+'T12:00:00').toLocaleDateString('de-AT')}
+function dif(a,b){return Math.round((new Date(a+'T12:00:00')-new Date(b+'T12:00:00'))/864e5)}
+function ex(){DB.ex=DB.ex||[];return DB.ex}
+function gross(v){return v.b!=null?v.b:Math.round(v.n*(1+v.r/100)*100)/100}
+function br(s){return esc(s).replace(/\n/g,'<br>')}
+var Y0=new Date().getFullYear(),cur=null;
+async function pdf(el,name,m){
+  try{var dl=await claude.use('downloads');if(!dl||!window.html2canvas||!window.jspdf){m.textContent='Der PDF-Download ist hier nicht verfügbar.';return}
+    m.textContent='PDF wird erstellt …';
+    var cv=await html2canvas(el,{scale:2,backgroundColor:'#ffffff'}),p=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),w=190,h=cv.height*w/cv.width;
+    if(h>277){w=w*277/h;h=277}
+    p.addImage(cv.toDataURL('image/jpeg',.92),'JPEG',10,10,w,h);
+    await dl.save({filename:name,data:p.output('blob')});m.textContent='PDF gespeichert.';
+  }catch(e){m.textContent='Die PDF konnte nicht erstellt werden.'}
+}
+$('tseg').onclick=function(e){var t=e.target.getAttribute('data-t');if(!t)return;Array.prototype.forEach.call($('tseg').children,function(b){b.classList.toggle('on',b===e.target)});['op','uva','kg','sr','ex'].forEach(function(x){$('t_'+x).classList.toggle('on',x===t)})};
+
+/* Offene Posten und Mahnung */
+function op(){
+  var t=iso(new Date());
+  var L=DB.iv.map(function(v){var du=v.due||add(v.dt||t,14);return{v:v,b:gross(v),du:du,late:!v.paid&&du<t}}).sort(function(a,b){return a.du<b.du?-1:1});
+  var O=L.filter(function(x){return !x.v.paid}),LT=O.filter(function(x){return x.late}),P=L.filter(function(x){return x.v.paid&&String(x.v.paid).slice(0,4)===String(Y0)});
+  var sm=function(a){return a.reduce(function(s,x){return s+x.b},0)};
+  $('t_ok').innerHTML=[['Offen',eur(sm(O)),O.length+' Rechnung(en)',''],['Überfällig',eur(sm(LT)),LT.length+' Rechnung(en)',LT.length?'neg':''],['Bezahlt '+Y0,eur(sm(P)),'brutto','pos']].map(function(k){return '<div class="card"><div class="v '+k[3]+'">'+k[1]+'</div><div class="l">'+k[0]+' · '+k[2]+'</div></div>'}).join('');
+  $('t_ol').innerHTML=L.map(function(x){var v=x.v,d=dif(x.du,t),cl=v.paid?'ok':(x.late?'late':(d<=7?'soon':'ok')),lb=v.paid?'bezahlt '+dd(v.paid):(x.late?(-d)+' Tg. überfällig':'fällig in '+d+' Tg.');
+    return '<div class="card"><div class="r" style="border:0;padding:0"><span><b>'+esc(v.nr||'–')+'</b> · '+esc(v.k||'–')+'<br><small>'+eur2(x.b)+' · fällig '+dd(x.du)+'</small></span><span class="chip '+cl+'">'+lb+'</span></div><div style="margin-top:10px"><button class="mb" data-b="'+v.id+'" type="button">'+(v.paid?'Wieder öffnen':'Als bezahlt markieren')+'</button> '+(v.paid?'':'<button class="mb" data-m="'+v.id+'" type="button">Mahnung</button>')+'</div></div>'}).join('')||'<p class="mu">Noch keine Rechnungen. Speichere unter „Rechnung“ eine Rechnung in der Übersicht.</p>';
+}
+$('t_ol').onclick=function(e){var b=e.target.getAttribute('data-b'),m=e.target.getAttribute('data-m');
+  if(b){DB.iv.forEach(function(v){if(String(v.id)===b)v.paid=v.paid?'':iso(new Date())});sdb();op()}
+  if(m){cur=m;mh();$('t_mh').style.display='block'}};
+function mh(){
+  var v=DB.iv.filter(function(x){return String(x.id)===cur})[0];if(!v)return;
+  var S={};try{S=JSON.parse(localStorage.getItem('rv1')||'{}')}catch(e){}
+  var c=DB.cu.filter(function(x){return x.n===v.k})[0],st=+$('t_ms').value,t=iso(new Date()),fr=add(t,st===2?5:7),du=v.due||add(v.dt||t,14),lg='';
+  try{lg=localStorage.getItem('rat_logo')||''}catch(e){}
+  var im=/^data:image\/(png|jpeg);base64,[A-Za-z0-9+\/=]+$/.test(lg)?'<img src="'+lg+'" alt="" style="max-height:52px;max-width:160px;display:block;margin-bottom:6px">':'';
+  var T=[['Zahlungserinnerung','sicher ist es nur übersehen worden: Für die unten genannte Rechnung konnten wir bisher keinen Zahlungseingang feststellen. Bitte überweise den offenen Betrag bis '+dd(fr)+'. Hat sich dieses Schreiben mit deiner Zahlung überschnitten, betrachte es bitte als gegenstandslos.'],['1. Mahnung','trotz Fälligkeit am '+dd(du)+' haben wir für die unten genannte Rechnung keinen Zahlungseingang festgestellt. Wir ersuchen dich, den offenen Betrag bis spätestens '+dd(fr)+' zu überweisen.'],['Letzte Mahnung','die unten genannte Rechnung ist trotz Erinnerung weiterhin offen. Bitte überweise den Betrag bis spätestens '+dd(fr)+'. Geht die Zahlung bis dahin nicht ein, behalten wir uns weitere Schritte vor.']][st];
+  $('t_sh').innerHTML='<div class="hd"><div>'+im+'<b style="font-size:18px">'+esc(S.firm||S.nm||'')+'</b><br>'+(S.firm&&S.nm?esc(S.nm)+'<br>':'')+br(S.ad||'')+(S.uid?'<br>UID: '+esc(S.uid):'')+'</div><div style="text-align:right">'+dd(t)+'</div></div>'
+   +'<p style="margin-top:20px"><b>'+esc(v.k||'')+'</b><br>'+br((c&&c.a)||'')+'</p><p style="font-size:18px;font-weight:800;margin:18px 0 8px">'+T[0]+'</p><p>Hallo '+esc(v.k||'')+',</p><p>'+T[1]+'</p>'
+   +'<table><tr><th>Rechnung Nr.</th><th>Rechnungsdatum</th><th>Fällig am</th><th class="rt">Offen (brutto)</th></tr><tr><td>'+esc(v.nr||'–')+'</td><td>'+dd(v.dt||t)+'</td><td>'+dd(du)+'</td><td class="rt"><b>'+eur2(gross(v))+'</b></td></tr></table>'
+   +'<div class="pay"><b>Bitte überweise bis '+dd(fr)+'</b><br>'+((S.ih||S.ib)?esc(S.ih||S.firm||'')+'<br>IBAN: '+esc(S.ib||'')+(S.bc?' · BIC: '+esc(S.bc):'')+'<br>':'')+'Verwendungszweck: '+esc(v.nr||'')+'</div><p style="margin-top:18px">Viele Grüße<br>'+esc(S.nm||S.firm||'')+'</p>';
+}
+$('t_ms').onchange=mh;$('t_mc').onclick=function(){$('t_mh').style.display='none'};
+$('t_md').onclick=function(){var v=DB.iv.filter(function(x){return String(x.id)===cur})[0];pdf($('t_sh'),'Mahnung-'+((v&&v.nr)||'')+'.pdf',$('t_mm'))};
+
+/* UVA */
+function yrs(){var s={};s[Y0]=1;DB.iv.forEach(function(v){if(v.dt)s[v.dt.slice(0,4)]=1});ex().forEach(function(x){if(x.dt)s[x.dt.slice(0,4)]=1});return Object.keys(s).sort().reverse()}
+function fillY(id){var el=$(id),old=el.value;el.innerHTML=yrs().map(function(y){return '<option>'+y+'</option>'}).join('');if(old)el.value=old}
+function uva(){
+  var y=+$('t_uy').value||Y0,q=+$('t_uq').value,inq=function(d){if(!d||+d.slice(0,4)!==y)return false;var m=+d.slice(5,7)-1;return m>=q*3&&m<q*3+3};
+  var A={20:[0,0],10:[0,0]},e0=0,vs=0;
+  DB.iv.forEach(function(v){if(!inq(v.dt))return;if(v.r===20||v.r===10){A[v.r][0]+=v.n;A[v.r][1]+=v.n*v.r/100}else e0+=v.n});
+  ex().forEach(function(x){if(inq(x.dt))vs+=x.v*x.r/100});
+  var z=A[20][1]+A[10][1]-vs,fr=[[y,4],[y,7],[y,10],[y+1,1]][q],f=new Date(fr[0],fr[1],15),R=function(a,b,c){return '<div class="r"><span>'+a+'</span><b'+(c?' class="'+c+'"':'')+'>'+b+'</b></div>'};
+  $('t_ur').innerHTML=R('Umsätze 20 % (netto)',eur2(A[20][0]))+R('Umsatzsteuer 20 %',eur2(A[20][1]))+R('Umsätze 10 % (netto)',eur2(A[10][0]))+R('Umsatzsteuer 10 %',eur2(A[10][1]))+R('Steuerfreie Umsätze (Kleinunternehmer)',eur2(e0))+R('Abziehbare Vorsteuer',eur2(vs))+R(z>=0?'Zahllast':'Guthaben',eur2(Math.abs(z)),z>=0?'neg':'pos')+R('Frist für UVA und Zahlung',f.toLocaleDateString('de-AT'));
+}
+function exl(){$('t_el').innerHTML=ex().slice().sort(function(a,b){return a.dt<b.dt?1:-1}).slice(0,40).map(function(x){return '<div class="r"><span>'+dd(x.dt)+' · '+esc(x.n||'Ausgabe')+'<br><small>USt '+x.r+' %</small></span><span><b>'+eur2(x.v)+'</b><button class="x" data-e="'+x.id+'" type="button" aria-label="Löschen">✕</button></span></div>'}).join('')||'<p class="mu">Noch keine Ausgaben.</p>'}
+$('t_ea').onclick=function(){var v=parseFloat($('t_ev').value);if(!v)return;ex().push({id:Date.now(),dt:$('t_ed').value||iso(new Date()),n:$('t_en').value.trim(),v:v,r:+$('t_er').value});$('t_en').value='';$('t_ev').value='';sdb();exl();fillY('t_uy');fillY('t_xy');uva()};
+$('t_el').onclick=function(e){var i=e.target.getAttribute('data-e');if(i){DB.ex=ex().filter(function(x){return String(x.id)!==i});sdb();exl();uva()}};
+['t_uy','t_uq'].forEach(function(i){$(i).onchange=uva});
+
+/* Kleinunternehmer-Ampel */
+function kg(){
+  var u=0;DB.iv.forEach(function(v){if(v.dt&&+v.dt.slice(0,4)===Y0)u+=v.n});
+  var p=u/55000,c=p<.7?'var(--ok)':(p<.9?'var(--warn)':'var(--red)');
+  $('t_kr').innerHTML='<h2>Umsatz '+Y0+' (netto)</h2><div style="font-size:30px;font-weight:800;color:'+c+'">'+eur(u)+'</div><div class="mu">von 55.000 € · '+Math.round(p*100)+' % der Grenze</div><div style="height:12px;background:var(--bd);border-radius:6px;overflow:hidden;margin:10px 0"><i style="display:block;height:100%;width:'+Math.min(100,p*100)+'%;background:'+c+'"></i></div><div class="r"><span>Noch frei bis zur Grenze</span><b>'+eur(Math.max(0,55000-u))+'</b></div><p style="margin-top:10px">'+(p>=1?'Die Grenze ist überschritten. Kläre mit deinem Steuerberater, ab wann du Umsatzsteuer ausweisen musst.':p>=.9?'Achtung: Du bist kurz vor der Grenze. Sprich bald mit deinem Steuerberater.':p>=.7?'Du näherst dich der Grenze. Behalte deinen Umsatz im Blick.':'Alles im grünen Bereich.')+'</p><p class="mu">Grundlage sind die unter „Übersicht“ gespeicherten Rechnungen (Nettoumsatz pro Kalenderjahr). Einzelheiten und Ausnahmen prüft dein Steuerberater.</p>';
+}
+
+/* Stundensatz */
+function netOf(g){if(g<=0)return g;var bg=Math.min(97020,Math.max(6613.2,g)),sv=bg*.2683+155.4,zu=Math.max(0,g-sv);return g-sv-est(Math.max(0,zu-Math.min(g,33000)*.15))}
+function sr(){
+  var W=parseFloat($('t_w').value)||0,F=parseFloat($('t_f').value)||0,U=parseFloat($('t_u').value)||0,H=parseFloat($('t_h').value)||0,A=parseFloat($('t_a').value)||0;
+  var lo=0,hi=1e6;for(var i=0;i<60;i++){var m=(lo+hi)/2;if(netOf(m)<W*12)lo=m;else hi=m}
+  var g=hi,um=g+F*12,hr=Math.max(0,(52-U)*H*A/100);
+  if(!hr){$('t_sres').innerHTML='<p class="mu">Bitte die Arbeitszeit eintragen.</p>';return}
+  var r=um/hr,R=function(a,b){return '<div class="r"><span>'+a+'</span><b>'+b+'</b></div>'};
+  $('t_sres').innerHTML='<div style="font-size:34px;font-weight:800;color:var(--ac)">'+eur2(r)+'</div><div class="mu" style="margin-bottom:8px">pro Stunde netto · '+eur2(r*1.2)+' brutto bei 20 % USt</div>'+R('Tagessatz (8 Std., netto)',eur(r*8))+R('Nötiger Jahresumsatz (netto)',eur(um))+R('Nötiger Gewinn vor Steuern',eur(g))+R('Verrechenbare Stunden im Jahr',String(Math.round(hr)));
+}
+['t_w','t_f','t_u','t_h','t_a'].forEach(function(i){$(i).oninput=sr});
+
+/* Export */
+$('t_xb').onclick=async function(){
+  var y=+$('t_xy').value||Y0,m=$('t_xm'),n=function(v){return String(Math.round(v*100)/100).replace('.',',')},q=function(s){return '"'+String(s==null?'':s).replace(/"/g,'""')+'"'};
+  var rows=[['Art','Datum','Nummer','Kunde oder Bezeichnung','Netto','USt-Satz','USt-Betrag','Brutto','Status']];
+  DB.iv.filter(function(v){return v.dt&&+v.dt.slice(0,4)===y}).sort(function(a,b){return a.dt<b.dt?-1:1}).forEach(function(v){rows.push(['Einnahme',dd(v.dt),v.nr,v.k,n(v.n),v.r+' %',n(v.n*v.r/100),n(gross(v)),v.paid?'bezahlt '+dd(v.paid):'offen'])});
+  ex().filter(function(x){return x.dt&&+x.dt.slice(0,4)===y}).sort(function(a,b){return a.dt<b.dt?-1:1}).forEach(function(x){rows.push(['Ausgabe',dd(x.dt),'',x.n,n(x.v),x.r+' %',n(x.v*x.r/100),n(x.v*(1+x.r/100)),''])});
+  if(rows.length<2){m.textContent='Für '+y+' gibt es noch keine Daten.';return}
+  var csv='\ufeff'+rows.map(function(r){return r.map(q).join(';')}).join('\r\n');
+  try{var dl=await claude.use('downloads');if(!dl)throw 0;await dl.save({filename:'buchhaltung-'+y+'.csv',data:csv});m.textContent='Gespeichert: buchhaltung-'+y+'.csv'}catch(e){m.textContent='Die Datei konnte nicht gespeichert werden.'}
+};
+
+/* Freischaltung */
+var qd=0;function all(){if(!qd){qd=1;$('t_uq').value=String(Math.floor(new Date().getMonth()/3))}fillY('t_uy');fillY('t_xy');op();uva();exl();kg();sr()}
+$('t_ed').value=iso(new Date());
+var _g=gate;gate=function(){_g();var p=!!mx;$('gate3').style.display=p?'none':'block';$('tbody').style.display=p?'block':'none';if(p)all()};
+window.addEventListener('hashchange',function(){if(mx&&location.hash==='#tools')all()});
+gate();
+})();
+</script>
+</body>
+</html>
